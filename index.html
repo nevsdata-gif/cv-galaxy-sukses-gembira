@@ -1,78 +1,320 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV.GALAXY SUKSES GEMBIRA | Profil Perusahaan</title>
+    <title>CV. GALAXY SUKSES GEMBIRA | Profil Perusahaan</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Tailwind Configuration and Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        /* Custom utilities for smooth reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Subtle pattern for the hero background */
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-600 antialiased selection:bg-brand-500 selection:text-white">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-blue-900">CV.GALAXY SUKSES GEMBIRA</h1>
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-gradient-to-br from-brand-600 to-brand-800 text-white rounded-xl flex items-center justify-center font-heading font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
+                    G
+                </div>
+                <h1 class="text-xl md:text-2xl font-heading font-bold text-brand-900 tracking-tight">
+                    CV. GALAXY <span class="text-brand-600">SUKSES GEMBIRA</span>
+                </h1>
+            </a>
+            <div class="hidden md:flex gap-8 font-medium text-sm text-gray-600">
+                <a href="#tentang" class="hover:text-brand-600 transition-colors">Tentang Kami</a>
+                <a href="#layanan" class="hover:text-brand-600 transition-colors">Bidang Usaha</a>
+                <a href="#kontak" class="hover:text-brand-600 transition-colors">Kontak</a>
+            </div>
         </div>
     </nav>
 
-    <header class="bg-blue-900 text-white py-16">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-4">Profil Perusahaan</h2>
-            <p class="text-lg text-blue-100">Didirikan berdasarkan Akta Notaris No. 49 Tanggal 28 Juli 2025</p>
+    <header class="relative bg-brand-900 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800"></div>
+        <div class="absolute inset-0 bg-pattern"></div>
+        
+        <!-- Decorative abstract blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-600 blur-3xl opacity-30 mix-blend-screen pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-500 blur-3xl opacity-20 mix-blend-screen pointer-events-none"></div>
+
+        <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-800/50 border border-brand-500/30 text-brand-100 text-sm font-medium tracking-wide mb-6 reveal">
+                Profil Perusahaan
+            </span>
+            <h2 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight reveal" style="transition-delay: 100ms;">
+                Membangun Kualitas,<br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Menghadirkan Kepercayaan</span>
+            </h2>
+            <p class="text-lg md:text-xl text-brand-100 max-w-2xl mx-auto mb-10 font-light reveal" style="transition-delay: 200ms;">
+                Perusahaan Penanaman Modal Dalam Negeri (PMDN) yang beroperasi secara resmi dengan Nomor Induk Berusaha (NIB): 1401260076895 dan NPWP: 1000000006837853. Berkomitmen menjadi mitra terbaik dalam industri dan perdagangan.
+            </p>
+            <div class="flex gap-4 reveal" style="transition-delay: 300ms;">
+                <a href="#kontak" class="bg-white text-brand-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg shadow-brand-900/20">
+                    Hubungi Kami
+                </a>
+                <a href="#tentang" class="bg-brand-800/50 text-white border border-brand-400/30 px-8 py-3 rounded-lg font-semibold hover:bg-brand-800 transition-colors backdrop-blur-sm">
+                    Pelajari Lebih Lanjut
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
-        <section class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-            <h3 class="text-2xl font-semibold mb-6 text-blue-900 border-b pb-2">Tentang Kami</h3>
-            <p class="text-gray-700 leading-relaxed">
-                C.V. Galaxy Sukses Gembira berkedudukan di Kota Makassar. Perusahaan ini bergerak dalam bidang perdagangan umum dan industri konveksi, dijalankan oleh manajemen yang profesional dan transparan sesuai dengan Anggaran Dasar yang telah disahkan.
-            </p>
+    <main class="max-w-6xl mx-auto px-6 py-20 space-y-24">
+        
+        <!-- About Us Section -->
+        <section id="tentang" class="scroll-mt-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal relative">
+                    <div class="absolute -inset-4 bg-brand-100 rounded-3xl transform -rotate-3 -z-10"></div>
+                    <img src="https://placehold.co/800x600/1e3a8a/ffffff?text=Galaxy+Sukses+Gembira" alt="Gedung Perusahaan" class="rounded-2xl shadow-xl w-full object-cover aspect-[4/3] border border-gray-100">
+                </div>
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-px bg-brand-500"></div>
+                        <h3 class="text-brand-600 font-semibold tracking-wider uppercase text-sm">Tentang Kami</h3>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">Mitra Terpercaya di Kota Makassar</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                        C.V. Galaxy Sukses Gembira berkedudukan di Kota Makassar. Perusahaan ini bergerak dalam bidang industri konveksi dan perdagangan umum, terdaftar resmi pada Sistem OSS dengan NIB 1401260076895 (Diterbitkan 14 Januari 2026).
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        Dijalankan oleh manajemen yang profesional dan transparan sebagai perusahaan PMDN, kami terus berinovasi untuk memberikan layanan dan produk berkualitas tinggi demi kepuasan pelanggan dan mitra bisnis kami.
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h3 class="text-2xl font-semibold mb-6 text-gray-800">Bidang Usaha</h3>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <h4 class="font-bold text-blue-800 mb-2">Perdagangan Eceran</h4>
-                    <p class="text-sm text-gray-600">Berbagai macam barang (bukan makanan/minuman) di toserba.</p>
+        <section id="layanan" class="scroll-mt-24">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="w-8 h-px bg-brand-500"></div>
+                    <h3 class="text-brand-600 font-semibold tracking-wider uppercase text-sm">Layanan Kami</h3>
+                    <div class="w-8 h-px bg-brand-500"></div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <h4 class="font-bold text-blue-800 mb-2">Pakaian</h4>
-                    <p class="text-sm text-gray-600">Perdagangan eceran pakaian ritel.</p>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">Bidang Usaha Utama</h2>
+                <p class="text-gray-600 text-lg">Fokus kami mencakup berbagai sektor niaga dan industri untuk memenuhi kebutuhan masyarakat.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 group hover:-translate-y-1 reveal">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-store text-2xl text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-heading font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors">Perdagangan Eceran</h4>
+                    <p class="text-gray-600 leading-relaxed">Penyediaan berbagai macam barang berkualitas (bukan makanan/minuman) dengan standar pelayanan toserba modern.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <h4 class="font-bold text-blue-800 mb-2">Konveksi</h4>
-                    <p class="text-sm text-gray-600">Industri pakaian jadi dari bahan tekstil.</p>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 group hover:-translate-y-1 reveal" style="transition-delay: 150ms;">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-shirt text-2xl text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-heading font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors">Pakaian</h4>
+                    <p class="text-gray-600 leading-relaxed">Perdagangan eceran pakaian ritel yang mengikuti tren terkini, mengutamakan kenyamanan dan gaya untuk semua kalangan.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 group hover:-translate-y-1 reveal" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-industry text-2xl text-brand-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-heading font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors">Industri Pakaian Jadi (Konveksi)</h4>
+                    <p class="text-gray-600 leading-relaxed">Terdaftar resmi dengan KBLI 14111 (Industri Pakaian Jadi Dari Tekstil). Melayani pesanan partai besar dengan kontrol kualitas yang ketat.</p>
                 </div>
             </div>
         </section>
 
-        <section class="grid md:grid-cols-2 gap-8">
-            <div class="bg-blue-50 p-8 rounded-2xl">
-                <h3 class="text-2xl font-semibold mb-6 text-blue-900">Manajemen</h3>
-                <div class="space-y-4 text-gray-800">
-                    <p><span class="font-bold">Direktur:</span> Tuan Wandy Wilson</p>
-                    <p><span class="font-bold">Pesero Komanditer:</span> Nyonya Levina Wilson</p>
+        <section id="kontak" class="scroll-mt-24 grid lg:grid-cols-5 gap-8">
+            
+            <!-- Management Detail -->
+            <div class="lg:col-span-2 bg-gradient-to-br from-brand-900 to-brand-950 p-10 rounded-3xl text-white relative overflow-hidden shadow-2xl reveal">
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white opacity-5 rounded-full blur-2xl"></div>
+                <h3 class="text-2xl font-heading font-bold mb-8">Struktur Manajemen</h3>
+                
+                <div class="space-y-8 relative z-10">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-user-tie text-brand-200"></i>
+                        </div>
+                        <div>
+                            <p class="text-brand-200 text-sm font-medium mb-1 uppercase tracking-wider">Direktur Utama</p>
+                            <p class="text-xl font-semibold">Tuan Wandy Wilson</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full h-px bg-white/10"></div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-user text-brand-200"></i>
+                        </div>
+                        <div>
+                            <p class="text-brand-200 text-sm font-medium mb-1 uppercase tracking-wider">Pesero Komanditer</p>
+                            <p class="text-xl font-semibold">Nyonya Levina Wilson</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-                <h3 class="text-2xl font-semibold mb-6 text-blue-900">Kontak Kami</h3>
-                <div class="space-y-4 text-gray-700">
-                    <p><strong>Alamat:</strong><br>Jalan Kenangan No. 15, Kelurahan Mattoangin,<br>Kota Makassar, Sulawesi Selatan</p>
-                    <p><strong>Telepon:</strong><br>+62896-5607-0799</p>
-                    <p><strong>Email:</strong><br><a href="mailto:notbetsysirua@gmail.com" class="text-blue-600 hover:underline">notbetsysirua@gmail.com</a></p>
+
+            <!-- Contact Info -->
+            <div class="lg:col-span-3 bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/40 reveal" style="transition-delay: 200ms;">
+                <h3 class="text-2xl font-heading font-bold mb-8 text-gray-900">Hubungi Kami</h3>
+                
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <div class="space-y-8">
+                        <!-- Address -->
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center shrink-0 text-brand-600">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Kantor Pusat</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Jalan Nusa Indah Nomor 4<br>
+                                    Kelurahan Mariso, Kec. Mariso<br>
+                                    Kota Makassar, Sulawesi Selatan 90121
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center shrink-0 text-brand-600">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Telepon</h4>
+                                <a href="tel:+6285166236108" class="text-gray-600 hover:text-brand-600 transition-colors text-sm">
+                                    +62 851-6623-6108
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center shrink-0 text-brand-600">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Email</h4>
+                                <a href="mailto:cvgalaxysuksesgembira@gmail.com" class="text-brand-600 hover:text-brand-800 transition-colors text-sm font-medium break-all">
+                                    cvgalaxysuksesgembira@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Optional Map Placeholder -->
+                    <div class="h-full min-h-[200px] bg-gray-100 rounded-xl overflow-hidden relative group">
+                        <img src="https://placehold.co/400x300/e2e8f0/64748b?text=Peta+Lokasi" alt="Peta Lokasi" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button class="bg-white text-gray-900 px-4 py-2 rounded-lg text-sm font-semibold shadow-lg" onclick="window.open('https://maps.google.com/?q=Jalan+Nusa+Indah+Nomor+4,+Mariso,+Makassar', '_blank')">
+                                Buka di Maps
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
-        <p>&copy; 2025 CV.Galaxy Sukses Gembira. All rights reserved.</p>
+    <footer class="bg-gray-950 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div>
+                <h2 class="text-xl font-heading font-bold text-white mb-2">CV. GALAXY SUKSES GEMBIRA</h2>
+                <p class="text-sm">Mitra terpercaya untuk perdagangan eceran dan konveksi di Makassar.</p>
+            </div>
+            <div class="text-sm">
+                <p>&copy; 2026 CV. Galaxy Sukses Gembira.</p>
+                <p>All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: Stop observing once animated
+                        // observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+
+            // Navbar shadow on scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    navbar.classList.add('shadow-md');
+                    navbar.classList.remove('shadow-sm');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                    navbar.classList.add('shadow-sm');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
